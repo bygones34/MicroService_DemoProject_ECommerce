@@ -16,7 +16,7 @@ namespace MultiShop.Catalog.Services.ProductDetailServices
             _mapper = mapper;
             var client = new MongoClient(_databaseSettings.ConnectionString);
             var database = client.GetDatabase(_databaseSettings.DatabaseName);
-            _productDetailCollection = database.GetCollection<ProductDetail>(_databaseSettings.ProductCollectionName);
+            _productDetailCollection = database.GetCollection<ProductDetail>(_databaseSettings.ProductDetailCollectionName);
         }
 
         public async Task CreateProductDetailAsync(CreateProductDetailDto createProductDetailDto)
